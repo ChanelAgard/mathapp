@@ -6,7 +6,10 @@
   <h1>Welcome to Math App!</h1>
 
   {{> hello}}
-  {{> allData}}
+  {{> addNum}}
+  {{> subNum}}
+  {{> multNum}}
+  {{> divNum}}
 
 </body>
 
@@ -33,4 +36,32 @@
     <p>{{skill}} is not a skill</p>
     {{/if}}
     <h6>Thank you for viewing</h6>
+</template>
+
+<template name="addNum">
+    <h2>Enter two numbers to be added</h2>
+    <input id="n1a" type="text"> + <input id="n2a" type="text"> 
+    <button id="js-adding">Add it </button>
+    <p>{{num1}} + {{num2}} = {{ans}}</p>
+</template>
+
+<template name="subNum">
+    <h2>Enter two numbers to subtracted</h2>
+    <input id="n1s" type="text"> - <input id="n2s" type="text"> 
+    <button id="js-subing">Subtract it </button>
+    <p>{{num1}} - {{num2}} = {{ans}}</p>
+</template>
+
+<template name="multNum">
+    <h2>Enter two numbers to be multiplied</h2>
+    <input id="n1m" type="text"> * <input id="n2m" type="text"> 
+    <button id="js-multing">Multiply it </button>
+    <p>{{num1}} * {{num2}} = {{ans}}</p>
+</template>
+
+<template name="divNum">
+    <h2>Enter two numbers to be divided</h2>
+    <input id="n1d" type="text"> / <input id="n2d" type="text"> 
+    <button id="js-diving">Divide it </button>
+    <p>{{num1}} / {{num2}} = {{ans}}</p>
 </template>

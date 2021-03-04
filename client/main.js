@@ -47,4 +47,106 @@ Template.allData.events({
     }
 })
 
+//addition
+
+Template.addNum.onCreated(function addNumOnCreated(){
+this.num1 = new ReactiveVar(0);
+this.num2 = new ReactiveVar(0);
+});
+
+Template.addNum.helpers({
+    num1(){
+        return Template.instance().num1.get();
+    },
+    num2(){
+        return Template.instance().num2.get();
+    },
+    ans(){
+        return Template.instance().num1.get() + Template.instance().num2.get();
+    }
+});
+
+Template.addNum.events({
+    'click #js-adding'(event, instance) {
+        instance.num1.set(parseInt(document.querySelector("#n1a").value));
+        instance.num2.set(parseInt(document.querySelector("#n2a").value));
+    }
+});
+
+//subtraction
+
+Template.subNum.onCreated(function subNumOnCreated(){
+    this.num1 = new ReactiveVar(0);
+    this.num2 = new ReactiveVar(0);
+    });
+    
+    Template.subNum.helpers({
+        num1(){
+            return Template.instance().num1.get();
+        },
+        num2(){
+            return Template.instance().num2.get();
+        },
+        ans(){
+            return Template.instance().num1.get() - Template.instance().num2.get();
+        }
+    });
+    
+    Template.subNum.events({
+        'click #js-subing'(event, instance) {
+            instance.num1.set(parseInt(document.querySelector("#n1s").value));
+            instance.num2.set(parseInt(document.querySelector("#n2s").value));
+        }
+    });
+
+//multiplication
+
+Template.multNum.onCreated(function multNumOnCreated(){
+    this.num1 = new ReactiveVar(0);
+    this.num2 = new ReactiveVar(0);
+    });
+        
+        Template.multNum.helpers({
+            num1(){
+                return Template.instance().num1.get();
+            },
+            num2(){
+                return Template.instance().num2.get();
+            },
+            ans(){
+                return Template.instance().num1.get() * Template.instance().num2.get();
+            }
+        });
+        
+        Template.multNum.events({
+            'click #js-multing'(event, instance) {
+                instance.num1.set(parseInt(document.querySelector("#n1m").value));
+                instance.num2.set(parseInt(document.querySelector("#n2m").value));
+            }
+        });
+//division
+
+Template.divNum.onCreated(function divNumOnCreated(){
+    this.num1 = new ReactiveVar(0);
+    this.num2 = new ReactiveVar(0);
+    });
+                
+        Template.divNum.helpers({
+            num1(){
+                return Template.instance().num1.get();
+            },
+            num2(){
+                return Template.instance().num2.get();
+            },
+            ans(){
+                return Template.instance().num1.get() / Template.instance().num2.get();
+            }
+        });
+                
+        Template.divNum.events({
+            'click #js-diving'(event, instance) {
+                instance.num1.set(parseInt(document.querySelector("#n1d").value));
+                instance.num2.set(parseInt(document.querySelector("#n2d").value));
+            }
+        });
         
