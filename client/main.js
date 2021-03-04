@@ -20,3 +20,31 @@ Template.hello.events({
     instance.counter.set(instance.counter.get() + 1);
   },
 });
+
+let gName = "Gordan Ramsey";
+
+Template.allData.helpers({
+    guestName(){
+        return gName;
+    },
+    skill(){
+        return "Chefing"
+    },
+    mySkill(){
+        if (gName == "Toffy"){
+            return true;
+        }
+            return false;
+    }
+});
+
+Template.allData.events({
+    'mouseout h3'(event, instance){
+        console.log("ITS RAWWWWWW");
+    },
+    'mouseenter h6'(event, instance){
+        console.log("Header 6 touched");
+    }
+})
+
+        
